@@ -17,7 +17,7 @@ The final model is deployed via aFastAPIserver, allowing users to submit data an
 Run the server:
 
 ```bash
-uvicorn app.server:app --reload
+python server.py
 ```
 
 Example request:
@@ -56,9 +56,6 @@ The trained model file (`.pkl`) is not included in this repository.
 If you want to train the model yourself:
 
 1. Make sure the dataset is placed in the `data/raw` directory.
-2. Run the preprocessing script: `data_preprocessing.py`
-3. Train the model using: `train.py`
-
-
+2. Train the model using: `python train.py`
 
 <pre class="o

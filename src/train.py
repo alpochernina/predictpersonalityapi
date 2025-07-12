@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import os
+import subprocess
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
 import joblib
@@ -7,7 +9,12 @@ import optuna
 from sklearn.metrics import f1_score
 from sklearn.model_selection import cross_val_predict
 
-data = pd.read_csv("data/processed/train_processed.csv").sort_values(by="id")
+processed_path = "data/processed/train_processed.csv"
+
+if not os.path.exists(processed_path):
+    subprocess.run(["python", "src/data_preprocessing.py"], check=True)
+
+data = pd.read_csv(processed_path).sort_values(by="id")
 
 X = data.drop(columns=["id","Personality"])
 y = data["Personality"]

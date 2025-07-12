@@ -65,3 +65,10 @@ def predict(data: List[InputData]):
     df = pd.DataFrame([item.dict() for item in data])
     prediction = predictor.predict(df)
     return {"prediction": prediction}
+
+def main():
+    import uvicorn
+    uvicorn.run(app="server:app", reload=True)
+    
+if __name__ == "__main__":
+    main()

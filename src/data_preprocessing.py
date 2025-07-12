@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 from sklearn.preprocessing import LabelEncoder
 import pickle
 
@@ -42,8 +43,17 @@ def preprocess_test_data(test_data: pd.DataFrame, drop_cols: list, object_cols: 
         )
     return test_data.drop(columns=drop_cols)
 
-train_data = pd.read_csv("data/raw/train.csv").sort_values(by="id")
-test_data = pd.read_csv("data/raw/test.csv").sort_values(by="id")
+raw_data_path = "data/raw/"
+train_path = os.path.join(raw_data_path, "train.csv")
+test_path = os.path.join(raw_data_path, "test.csv")
+
+if not os.path.exists(train_path):
+    raise FileNotFoundError(f"Файл не найден: {train_path}")
+if not os.path.exists(test_path):
+    raise FileNotFoundError(f"Файл не найден: {test_path}")
+
+train_data = pd.read_csv(train_path).sort_values(by="id")
+test_data = pd.read_csv(test_path).sort_values(by="id")
 
 drop_cols = ["Going_outside"]
 target = ["Personality"]
