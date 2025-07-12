@@ -1,8 +1,8 @@
 ## Personality Prediction API – Introvert vs Extrovert
 
-This project was created as part of the [Kaggle Playground Series - Season 5, Episode 7](https://www.kaggle.com/competitions/playground-series-s5e7/overview), using the [Extrovert vs Introvert Behavior Dataset](https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data/data).
+This project is based on [Kaggle Playground Series - Season 5, Episode 7](https://www.kaggle.com/competitions/playground-series-s5e7/overview), using the [Extrovert vs Introvert Behavior Dataset](https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data/data).
 
-The final model is deployed via aFastAPIserver, allowing users to submit data and receive predictions through a REST API.
+The final model is deployed via FastAPIserver, allowing users to submit data and receive predictions through a REST API.
 
 ## Features
 
